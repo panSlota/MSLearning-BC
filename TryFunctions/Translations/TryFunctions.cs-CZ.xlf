@@ -3,11 +3,497 @@
   <file datatype="xml" source-language="en-US" target-language="cs-CZ" original="TryFunctions">
     <body>
       <group id="body">
+        <trans-unit id="Table 528776695 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Record Primary Key Value</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Record Primary Key Value - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 528776695 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Record Primary Key Value - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 528776695 - Field 3531868071 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Field No.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Record Primary Key Value - Field Field No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 528776695 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Record Primary Key Value - Field Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 528776695 - Field 56735747 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Position</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Record Primary Key Value - Field Position - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 528776695 - Field 3135334477 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Table ID</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Record Primary Key Value - Field Table ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 528776695 - Field 4293380794 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transaction Setup Code</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Record Primary Key Value - Field Transaction Setup Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 528776695 - Field 1878130204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Record Primary Key Value - Field Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 528776695 - Field 2463291169 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type Name</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Record Primary Key Value - Field Type Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 528776695 - Field 1131619133 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Value</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Record Primary Key Value - Field Value - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3014639573 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transaction Setup</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Transaction Setup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3014639573 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Transaction Setup - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3014639573 - Field 3910324415 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Default Action</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Transaction Setup - Field Default Action - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3014639573 - Field 2185684127 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ID Filter</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Transaction Setup - Field ID Filter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3014639573 - Field 3388782392 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Run TryFunction</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Transaction Setup - Field Run TryFunction - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3192242104 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transaction Worksheet Line</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Transaction Worksheet Line - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3192242104 - Field 1060207642 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Action</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Transaction Worksheet Line - Field Action Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3192242104 - Field 2792604300 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Consume TryFunction Result</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Transaction Worksheet Line - Field Consume TryFunction Result - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3192242104 - Field 3846862522 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Last Run Time</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Transaction Worksheet Line - Field Last Run Time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3192242104 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Transaction Worksheet Line - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3192242104 - Field 472338107 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Result</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Transaction Worksheet Line - Field Result - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3192242104 - Field 3535442407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Result Reason</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Transaction Worksheet Line - Field Result Reason - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3192242104 - Field 3388782392 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Run TryFunction</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Transaction Worksheet Line - Field Run TryFunction - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3192242104 - Field 3135334477 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Table ID</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Transaction Worksheet Line - Field Table ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3192242104 - Field 3808951907 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Table Name</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Transaction Worksheet Line - Field Table Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3192242104 - Field 561240882 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Throw Error</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Transaction Worksheet Line - Field Throw Error - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3192242104 - Field 4293380794 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transaction Setup Code</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Transaction Worksheet Line - Field Transaction Setup Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1930440983 - NamedType 3543523789" size-unit="char" translate="yes" xml:space="preserve">
           <source>No table with ID %1 has been found.</source>
           <target state="needs-translation"/>
           <note from="Developer" annotates="general" priority="2">%1 = Table ID</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Transaction Functions - NamedType NoTableWithIDFoundErr</note>
+        </trans-unit>
+        <trans-unit id="Page 780895981 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Record PK Values FactBox</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Record PK Values FactBox - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 780895981 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the description.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Record PK Values FactBox - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 780895981 - Control 2961552353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the field.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Record PK Values FactBox - Control Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 780895981 - Control 1878130204 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the data type of the field.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Record PK Values FactBox - Control Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 780895981 - Control 1131619133 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the field.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Record PK Values FactBox - Control Value - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2923543554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Record Primary Key Values</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Record Primary Key Values - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2923543554 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the description.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Record Primary Key Values - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2923543554 - Control 3531868071 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the number of the field.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Record Primary Key Values - Control Field No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2923543554 - Control 2961552353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the field.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Record Primary Key Values - Control Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2923543554 - Control 56735747 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the position of the field in the primary key.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Record Primary Key Values - Control Position - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2923543554 - Control 1878130204 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the data type of the field.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Record Primary Key Values - Control Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2923543554 - Control 1131619133 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the field.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Record Primary Key Values - Control Value - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3014639573 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transaction Setup</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Setup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3014639573 - Control 3004954119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the code of the setup.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Setup - Control Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3014639573 - Control 3910324415 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the default aciton. This action is applied when suggesting lines in the worksheet.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Setup - Control Default Action - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3014639573 - Control 2185684127 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the Object ID filter for the tables.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Setup - Control ID Filter - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3014639573 - Control 3388782392 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if the operation should be run inside a TryFunction.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Setup - Control Run TryFunction - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3014639573 - Action 2231518605 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Displays the primary key values for the selected table.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Setup - Action Primary Key Values - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3014639573 - Action 2231518605 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary Key Values</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Setup - Action Primary Key Values - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3307642382 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transaction Worksheet</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Worksheet - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3307642382 - Control 1060207642 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the action to perform on the table.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Worksheet - Control Action Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3307642382 - Control 2792604300 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether the TryFunction return value should be consumed (i.e. wrapped in a conditional statement or assigned to a variable).</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Worksheet - Control Consume TryFunction Result - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3307642382 - Control 3846862522 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the last date and time the transaction has been executed.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Worksheet - Control Last Run Time - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3307642382 - Control 472338107 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the result of the transaction run.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Worksheet - Control Result - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3307642382 - Control 3535442407 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the reason why the transaction failed.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Worksheet - Control Result Reason - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3307642382 - Control 3388782392 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if the operation should be run inside a TryFunction.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Worksheet - Control Run TryFunction - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3307642382 - Control 3135334477 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the ID of the table on which the transaction is being executed.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Worksheet - Control Table ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3307642382 - Control 3808951907 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the table.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Worksheet - Control Table Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3307642382 - Control 561240882 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if an error should be thrown during the transaction.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Worksheet - Control Throw Error - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3307642382 - Control 4293380794 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the code of the setup.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Worksheet - Control Transaction Setup Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3307642382 - Control 4293380794 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transaction Setup Code</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Worksheet - Control Transaction Setup Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3307642382 - Action 2231518605 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Opens the primary key values for the selected table.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Worksheet - Action Primary Key Values - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3307642382 - Action 2231518605 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary Key Values</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Worksheet - Action Primary Key Values - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3307642382 - Action 1386367117 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Clears all results of the transaction runs from the worksheet.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Worksheet - Action Clear Results - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3307642382 - Action 1386367117 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Clear Results</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Worksheet - Action Clear Results - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3307642382 - Action 1384210787 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Suggests all operations for the current table.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Worksheet - Action Suggest Lines - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3307642382 - Action 1384210787 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Suggest Lines</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Worksheet - Action Suggest Lines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3307642382 - Action 2099597673 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transactions</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Worksheet - Action Transactions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3307642382 - Action 2958710393 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Runs all transactions for the current sheet.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Worksheet - Action Run All Transactions - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3307642382 - Action 2958710393 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Run All Transactions</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Worksheet - Action Run All Transactions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3307642382 - Action 2140890127 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Runs the transaction for the selected lines.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Worksheet - Action Run Transaction - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3307642382 - Action 2140890127 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Run Transaction</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Worksheet - Action Run Transaction - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3307642382 - Action 436407473 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Navigation</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Worksheet - Action Navigation_Promoted - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3307642382 - Action 3312973166 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transactions</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Worksheet - Action Transactions_Promoted - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2245529421 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source> </source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Record Action Type - EnumValue   - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2245529421 - EnumValue 2477294019 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Delete</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Record Action Type - EnumValue Delete - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2245529421 - EnumValue 2049086889 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Insert</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Record Action Type - EnumValue Insert - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2245529421 - EnumValue 3817527484 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Modify</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Record Action Type - EnumValue Modify - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2245529421 - EnumValue 2119658478 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Read</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Record Action Type - EnumValue Read - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2856135896 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source> </source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Transaction Run Result - EnumValue   - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2856135896 - EnumValue 2108159406 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fail</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Transaction Run Result - EnumValue Fail - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2856135896 - EnumValue 1327490294 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fail Consumed</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Transaction Run Result - EnumValue Fail Consumed - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2856135896 - EnumValue 3878926381 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Success</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Transaction Run Result - EnumValue Success - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2856135896 - EnumValue 4225442797 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Success Consumed</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Transaction Run Result - EnumValue Success Consumed - Property Caption</note>
         </trans-unit>
       </group>
     </body>
