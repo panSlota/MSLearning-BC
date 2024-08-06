@@ -48,19 +48,19 @@ page 150001 "Transaction Worksheet"
 
                 field("Table ID"; Rec."Table ID")
                 {
-                    ToolTip = 'Specifies the value of the Table ID field.';
+                    ToolTip = 'Specifies the ID of the table on which the transaction is being executed.';
                 }
                 field("Table Name"; Rec."Table Name")
                 {
-                    ToolTip = 'Specifies the value of the Table Name field.';
+                    ToolTip = 'Specifies the name of the table.';
                 }
                 field("Action Type"; Rec."Action Type")
                 {
-                    ToolTip = 'Specifies the value of the Action field.';
+                    ToolTip = 'Specifies the action to perform on the table.';
                 }
                 field("Run TryFunction"; Rec."Run TryFunction")
                 {
-                    ToolTip = 'Specifies the value of the Run TryFunction field.';
+                    ToolTip = 'Specifies if the operation should be run inside a TryFunction.';
                 }
                 field("Consume TryFunction Result"; Rec."Consume TryFunction Result")
                 {
@@ -69,17 +69,17 @@ page 150001 "Transaction Worksheet"
                 }
                 field("Throw Error"; Rec."Throw Error")
                 {
-                    ToolTip = 'Specifies the value of the Throw Error field.';
+                    ToolTip = 'Specifies if an error should be thrown during the transaction.';
                 }
                 field(Result; Rec.Result)
                 {
-                    ToolTip = 'Specifies the value of the Result field.';
+                    ToolTip = 'Specifies the result of the transaction run.';
                     Style = Favorable;
                     StyleExpr = ResultEmphasize;
                 }
                 field("Result Reason"; Rec."Result Reason")
                 {
-                    ToolTip = 'Specifies the value of the Result Reason field.';
+                    ToolTip = 'Specifies the reason why the transaction failed.';
                     DrillDown = true;
                     Style = Unfavorable;
                     StyleExpr = Rec."Result Reason" <> '';
@@ -92,7 +92,7 @@ page 150001 "Transaction Worksheet"
                 }
                 field("Last Run Time"; Rec."Last Run Time")
                 {
-                    ToolTip = 'Specifies the value of the Last Run Time field.';
+                    ToolTip = 'Specifies the last date and time the transaction has been executed.';
                 }
             }
         }

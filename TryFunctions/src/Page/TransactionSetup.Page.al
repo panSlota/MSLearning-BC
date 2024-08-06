@@ -15,11 +15,11 @@ page 150002 "Transaction Setup"
             {
                 field("Code"; Rec."Code")
                 {
-                    ToolTip = 'Specifies the value of the Code field.', Comment = '%';
+                    ToolTip = 'Specifies the code of the setup.';
                 }
                 field("ID Filter"; Rec."ID Filter")
                 {
-                    ToolTip = 'Specifies the value of the ID Filter field.', Comment = '%';
+                    ToolTip = 'Specifies the Object ID filter for the tables.';
 
                     trigger OnLookup(var Text: Text): Boolean
                     var
@@ -43,11 +43,11 @@ page 150002 "Transaction Setup"
                 }
                 field("Default Action"; Rec."Default Action")
                 {
-                    ToolTip = 'Specifies the value of the Default Action field.', Comment = '%';
+                    ToolTip = 'Specifies the default aciton. This action is applied when suggesting lines in the worksheet.';
                 }
                 field("Run TryFunction"; Rec."Run TryFunction")
                 {
-                    ToolTip = 'Specifies the value of the Run TryFunction field.', Comment = '%';
+                    ToolTip = 'Specifies if the operation should be run inside a TryFunction.';
                 }
             }
         }
@@ -60,6 +60,7 @@ page 150002 "Transaction Setup"
             {
                 ApplicationArea = All;
                 Caption = 'Primary Key Values';
+                ToolTip = 'Displays the primary key values for the selected table.';
                 Image = TextFieldConfirm;
                 Visible = PrimaryKeyValuesVisible;
 

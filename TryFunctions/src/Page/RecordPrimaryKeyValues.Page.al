@@ -16,27 +16,27 @@ page 150000 "Record Primary Key Values"
             {
                 field(Name; Rec.Name)
                 {
-                    ToolTip = 'Specifies the value of the Name field.';
+                    ToolTip = 'Specifies the name of the field.';
                 }
                 field("Field No."; Rec."Field No.")
                 {
-                    ToolTip = 'Specifies the value of the No. field.';
+                    ToolTip = 'Specifies the number of the field.';
                 }
                 field("Type"; Rec."Type Name")
                 {
-                    ToolTip = 'Specifies the value of the Type field.';
+                    ToolTip = 'Specifies the name of the data type of the field.';
                 }
                 field("Value"; Rec."Value")
                 {
-                    ToolTip = 'Specifies the value of the Value field.';
+                    ToolTip = 'Specifies the value of the field.';
                 }
                 field(Position; Rec.Position)
                 {
-                    ToolTip = 'Specifies the value of the Position field.';
+                    ToolTip = 'Specifies the position of the field in the primary key.';
                 }
                 field(Description; Rec.Description)
                 {
-                    ToolTip = 'Specifies the value of the Description field.';
+                    ToolTip = 'Specifies the description.';
                 }
             }
         }

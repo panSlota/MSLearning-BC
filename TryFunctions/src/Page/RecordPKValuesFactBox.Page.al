@@ -13,19 +13,19 @@ page 150003 "Record PK Values FactBox"
             {
                 field(Name; Rec.Name)
                 {
-                    ToolTip = 'Specifies the value of the Name field.';
+                    ToolTip = 'Specifies the name of the field.';
                 }
                 field("Type"; Rec."Type Name")
                 {
-                    ToolTip = 'Specifies the value of the Type field.';
+                    ToolTip = 'Specifies the name of the data type of the field.';
                 }
                 field("Value"; Rec."Value")
                 {
-                    ToolTip = 'Specifies the value of the Value field.';
+                    ToolTip = 'Specifies the value of the field.';
                 }
                 field(Description; Rec.Description)
                 {
-                    ToolTip = 'Specifies the value of the Description field.';
+                    ToolTip = 'Specifies the description.';
                 }
             }
         }
