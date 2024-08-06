@@ -33,4 +33,22 @@ table 150002 "Transaction Setup"
             Clustered = true;
         }
     }
+
+    trigger OnDelete()
+    var
+        RecordPrimaryKeyValue: Record "Record Primary Key Value";
+        TransactionWorksheetLine: Record "Transaction Worksheet Line";
+        ConfirmManagement: Codeunit "Confirm Management";
+        DeleteSetupQst: Label 'Do you want to delete the setup %1?', Comment = '%1 = Setup Code';
+    begin
+        if not ConfirmManagement.GetResponseOrDefault(StrSubstNo(DeleteSetupQst, Code), false) then
+            exit;
+
+        RecordPrimaryKeyValue.SetFilter("Table ID", "ID Filter");
+        RecordPrimaryKeyValue.SetRange("Transaction Setup Code", Code);
+        RecordPrimaryKeyValue.DeleteAll(true);
+
+        TransactionWorksheetLine.SetRange("Transaction Setup Code", Code);
+        TransactionWorksheetLine.DeleteAll(true);
+    end;
 }
