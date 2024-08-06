@@ -1,12 +1,6 @@
 codeunit 150004 "Modify Transaction" implements ITransactionType
 {
-    TableNo = "Transaction Worksheet Line";
     Access = Internal;
-
-    trigger OnRun()
-    begin
-
-    end;
 
     procedure Process(var TransactionWorksheetLine: Record "Transaction Worksheet Line")
     begin
@@ -25,5 +19,4 @@ codeunit 150004 "Modify Transaction" implements ITransactionType
     procedure TFProcessError(var TransactionWorksheetLine: Record "Transaction Worksheet Line")
     begin
     end;
-
 }

@@ -13,10 +13,6 @@ codeunit 150000 "Transaction Functions"
     end;
 
     var
-        /// <summary>
-        /// zaznam, na kterem budou provedeny zmeny
-        /// </summary>
-        Record: RecordRef;
         NoTableWithIDFoundErr: Label 'No table with ID %1 has been found.', Comment = '%1 = Table ID';
 
     #region Transactions
