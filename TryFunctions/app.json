@@ -1,0 +1,34 @@
+{
+  "id": "420666be-4144-4c74-a831-f59bedbba661",
+  "name": "TryFunctions",
+  "publisher": "Don Alberto",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "24.0.0.0",
+  "idRanges": [
+    {
+      "from": 150000,
+      "to": 150100
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": false,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "runtime": "13.0",
+  "features": [
+    "NoImplicitWith",
+    "TranslationFile",
+    "NoPromotedActionProperties"
+  ]
+}

@@ -1,0 +1,8 @@
+.alcache/*
+.alpackages/*
+.altemplates/*
+.vscode/*
+.snapshots/*
+Translations/*.g.xlf
+*.app
+*.cache
