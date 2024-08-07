@@ -1,3 +1,8 @@
+/// <summary>
+/// cteni zaznamu
+/// 
+/// obsahuje funkce pro cteni zaznamu
+/// </summary>
 codeunit 150002 "Read Transaction_tf" implements ITransactionType_tf
 {
     Access = Internal;
@@ -6,6 +11,10 @@ codeunit 150002 "Read Transaction_tf" implements ITransactionType_tf
         TransactionFunctions: Codeunit "Transaction Functions_tf";
         ProcessNameLbl: Label 'read';
 
+    /// <summary>
+    /// natahne si zaznam z DB
+    /// </summary>
+    /// <param name="TransactionWorksheetLine">radek sesitu transakce</param>
     procedure Process(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf");
     var
         RecRefToRead: RecordRef;

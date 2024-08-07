@@ -1,3 +1,8 @@
+/// <summary>
+/// spousti operace nad tabulkami uvedenymi v radcich sesitu transakci
+/// 
+/// pousti prislusnou CU na zaklade hodnoty v E150000 "Record Action Type_tf"
+/// </summary>
 codeunit 150000 "Transaction Functions_tf"
 {
     TableNo = "Transaction Worksheet Line_tf";
@@ -17,6 +22,15 @@ codeunit 150000 "Transaction Functions_tf"
 
     #region Transactions
 
+    /// <summary>
+    /// spousti operace nad tabulkami uvedenymi v radcich sesitu transakci
+    ///
+    /// pousti prislusnou CU na zaklade hodnoty v E150000 "Record Action Type_tf"
+    ///
+    /// na zaklade poli *"Run TryFunction"*, *"Consume TryFunction Result"* a *"Throw Error"* urcuje, jakou operaci spustit &amp;
+    /// jake pole na radku sesitu transakci validovat
+    /// </summary>
+    /// <param name="TransactionWorksheetLine">radek sesitu transakce</param>
     local procedure "Code"(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf")
     var
         ITransactionType: Interface ITransactionType_tf;
@@ -69,6 +83,13 @@ codeunit 150000 "Transaction Functions_tf"
 
     #region Setup
 
+    /// <summary>
+    /// provede RecordRef.Open na zaklade ID tabulky
+    ///
+    /// zkontroluje, ze tabulka s danym ID existuje
+    /// </summary>
+    /// <param name="TableNo">ID tabulky</param>
+    /// <returns>otevreny RecordRef</returns>
     procedure OpenRecordRef(TableNo: Integer) RecRef: RecordRef;
     var
         AllObjWithCaption: Record AllObjWithCaption;
@@ -81,6 +102,16 @@ codeunit 150000 "Transaction Functions_tf"
         RecRef.Open(TableNo);
     end;
 
+    /// <summary>
+    /// provede "GET" na zaznamu podle ID tabulky a hodnot v PK
+    ///
+    /// misto *GET* provede v cyklu serii *SetFilter* na polich PK
+    ///
+    /// hodnoty PK bere na zaklade pole *Position*, aby zachoval poradi
+    /// </summary>
+    /// <param name="RecRef">pozadovany zaznam</param>
+    /// <param name="TransactionWorksheetLine">radek sesitu transakce</param>
+    /// <returns>**TRUE**, pokud nasel, jinak **FALSE**</returns>
     procedure GetRecordRef(var RecRef: RecordRef; var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf"): Boolean;
     var
         RecordPrimaryKeyValue: Record "Record Primary Key Value_tf";
@@ -100,6 +131,16 @@ codeunit 150000 "Transaction Functions_tf"
         exit(RecRef.FindFirst());
     end;
 
+    /// <summary>
+    /// slouzi pro validaci poli PK na zaznamu
+    ///
+    /// bere v potaz datovy typ pole a jeho delku
+    /// </summary>
+    /// <param name="RecRef">zaznam</param>
+    /// <param name="FieldNo">cislo pole</param>
+    /// <param name="Value">hodnota pole</param>
+    /// <param name="Type">datovy typ pole</param>
+    /// <param name="Length">delka pole</param>
     procedure ValidateRecordRefField
     (
         var RecRef: RecordRef;
@@ -184,6 +225,11 @@ codeunit 150000 "Transaction Functions_tf"
         end;
     end;
 
+    /// <summary>
+    /// vrati text chyby pro dany proces (cteni, zapis, modifikace, mazani)
+    /// </summary>
+    /// <param name="ProcessName">nazev procesu</param>
+    /// <returns>text chyby</returns>
     procedure GetProcessError(ProcessName: Text): Text
     var
         ErrorTxt: Label 'An error occured during the %1 process.', Comment = '%1 = Process Name';

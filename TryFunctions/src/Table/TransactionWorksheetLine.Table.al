@@ -88,6 +88,11 @@ table 150001 "Transaction Worksheet Line_tf"
         }
     }
 
+    /// <summary>
+    /// umozni uzivateli vybrat kod nastaveni transakci pomoci lookupPage
+    /// </summary>
+    /// <param name="TransactionWorksheetLine">radek sesitu transakci</param>
+    /// <param name="TransactionSetupCode">kod nastaveni transakci</param>
     procedure LookupTransactionSetupCode(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf"; var TransactionSetupCode: Code[20])
     var
         TransactionSetup: Record "Transaction Setup_tf";
@@ -102,6 +107,12 @@ table 150001 "Transaction Worksheet Line_tf"
         TransactionWorksheetLine.FilterGroup(CurrentFilterGroup);
     end;
 
+    /// <summary>
+    /// nastavi vychozi hodnoty poli pro novy radek, na ktery se uzivatel postavi
+    ///
+    /// hodnoty bere z predchoziho radku
+    /// </summary>
+    /// <param name="LastTransactionWorksheetLine">xRec</param>
     procedure SetupNewLine(var LastTransactionWorksheetLine: Record "Transaction Worksheet Line_tf")
     var
     begin

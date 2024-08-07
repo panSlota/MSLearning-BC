@@ -1,7 +1,14 @@
+/// <summary>
+/// obsahuje funkce pro praci se sesitem transakci
+/// </summary>
 codeunit 150001 "Transaction Worksheet Mgt_tf"
 {
     Access = Internal;
 
+    /// <summary>
+    /// vymaze vysledky behu transakci pro dany sesit
+    /// </summary>
+    /// <param name="TransactionWorksheetLine">radek sesitu transakce</param>
     procedure ClearResults(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf")
     begin
         TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::" ";
@@ -10,6 +17,14 @@ codeunit 150001 "Transaction Worksheet Mgt_tf"
         TransactionWorksheetLine.ModifyAll("Result Reason", '');
     end;
 
+    /// <summary>
+    /// navrhne radky pro dany sesit
+    ///
+    /// - smaze vsechny radky pro dany sesit
+    /// - vlozi radky podle nastaveni
+    /// - navrhne radky pro vsechny tabulky podle moznych operaci
+    /// </summary>
+    /// <param name="TransactionSetupCode">kod nastaveni transakci</param>
     procedure SuggestLines(TransactionSetupCode: Code[20])
     var
         TransactionWorksheetLine, TransactionWorksheetLine2 : Record "Transaction Worksheet Line_tf";
@@ -61,6 +76,12 @@ codeunit 150001 "Transaction Worksheet Mgt_tf"
         until TempTransactionWorksheetLine.Next() = 0;
     end;
 
+    /// <summary>
+    /// zkontroluje, ze jsou spravne nadefinovane hodnoty PK pro dany zaznam
+    ///
+    /// kontroluje pocet poli a jejich hodnoty, porovnava oproti definici objektu
+    /// </summary>
+    /// <param name="TransactionWorksheetLine">radek sesitu transakce</param>
     procedure CheckDefinedPKValues(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf")
     var
         RecordPrimaryKeyValue: Record "Record Primary Key Value_tf";
@@ -88,6 +109,14 @@ codeunit 150001 "Transaction Worksheet Mgt_tf"
         until TransactionWorksheetLine.Next() = 0;
     end;
 
+    /// <summary>
+    /// vlozi radky podle nastaveni 
+    ///
+    /// vklada podle filtru ID tabulky
+    ///
+    /// na kazdy radek nastavi vychozi akci z nastaveni
+    /// </summary>
+    /// <param name="TransactionSetupCode">kod nastaveni transakci</param>
     local procedure InsertLinesFromSetup(TransactionSetupCode: Code[20])
     var
         TransactionSetup: Record "Transaction Setup_tf";
@@ -128,6 +157,10 @@ codeunit 150001 "Transaction Worksheet Mgt_tf"
             until AllObjWithCaption.Next() = 0;
     end;
 
+    /// <summary>
+    /// smaze vsechny radky pro dany sesit
+    /// </summary>
+    /// <param name="TransactionSetupCode">kod nastaveni transakci</param>
     local procedure DeleteLines(TransactionSetupCode: Code[20])
     var
         TransactionWorksheetLine: Record "Transaction Worksheet Line_tf";
@@ -137,6 +170,19 @@ codeunit 150001 "Transaction Worksheet Mgt_tf"
             TransactionWorksheetLine.DeleteAll(true);
     end;
 
+    /// <summary>
+    /// zjisti, zda radek v sesitu jiz existuje
+    /// 
+    /// slouzi pro automaticke vkladani pri navrhu radku
+    ///
+    /// bere v potaz hodnoty poli *Action Type*, *Run TryFunction*, *Consume TryFunction Result*
+    /// </summary>
+    /// <param name="TransactionSetupCode">kod nastaveni transakci</param>
+    /// <param name="TableID">ID tabulky</param>
+    /// <param name="ActionType">akce</param>
+    /// <param name="RunTryFunction">spustit operaci uvnitr TryFunction</param>
+    /// <param name="ConsumeTryFunctionResult">pouzit navratovou hodnotu TryFunction</param>
+    /// <returns>**TRUE** pokud nasel, jinak **FALSE**</returns>
     local procedure LineExists
     (
         TransactionSetupCode: Code[20];
@@ -173,6 +219,14 @@ codeunit 150001 "Transaction Worksheet Mgt_tf"
                 ConsumeTryFunctionResult := false;
     end;
 
+    /// <summary>
+    /// validuje hodnoty poli na radku sesitu
+    /// </summary>
+    /// <param name="TransactionWorksheetLine">radek sesitu transakci</param>
+    /// <param name="TableID">ID tabulky</param>
+    /// <param name="RecordActionType">akce</param>
+    /// <param name="RunTryFunction">spustit transakci uvnitr TryFunction</param>
+    /// <param name="ConsumeTryFunctionResult">pouzit navratovou hodnotu TryFunction</param>
     local procedure ValidateLineFields
     (
         var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf";
@@ -191,6 +245,11 @@ codeunit 150001 "Transaction Worksheet Mgt_tf"
             TransactionWorksheetLine."Consume TryFunction Result" := false;
     end;
 
+    /// <summary>
+    /// ziska cislo posledniho radku sesitu transakci pro dany sesit
+    /// </summary>
+    /// <param name="TransactionSetupCode">kod nastaveni transakci</param>
+    /// <returns>int32</returns>
     local procedure GetLastLineNo(TransactionSetupCode: Code[20]): Integer
     var
         TransactionWorksheetLine: Record "Transaction Worksheet Line_tf";
