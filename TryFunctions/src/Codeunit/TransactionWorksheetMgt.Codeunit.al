@@ -61,6 +61,33 @@ codeunit 150001 "Transaction Worksheet Mgt_tf"
         until TempTransactionWorksheetLine.Next() = 0;
     end;
 
+    procedure CheckDefinedPKValues(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf")
+    var
+        RecordPrimaryKeyValue: Record "Record Primary Key Value_tf";
+        Field: Record Field;
+        UserPKCount, DefinedPKCount : Integer;
+    begin
+        TransactionWorksheetLine.FindSet();
+        repeat
+            RecordPrimaryKeyValue.SetRange("Table ID", TransactionWorksheetLine."Table ID");
+            RecordPrimaryKeyValue.SetRange("Transaction Setup Code", TransactionWorksheetLine."Transaction Setup Code");
+            RecordPrimaryKeyValue.SetFilter(Value, '<>%1', ''); //nejen, ze tam musi to pole byt definovano, ale k tomu nesmi byt prazdne
+            UserPKCount := RecordPrimaryKeyValue.Count();
+
+            Field.SetRange(TableNo, TransactionWorksheetLine."Table ID");
+            Field.SetRange(IsPartOfPrimaryKey, true);
+            DefinedPKCount := Field.Count();
+
+            TransactionWorksheetLine."Defined PK Checked" := true;
+            TransactionWorksheetLine."No. of PK Fields Missing" := 0;
+
+            if UserPKCount <> DefinedPKCount then
+                TransactionWorksheetLine."No. of PK Fields Missing" := DefinedPKCount - UserPKCount;
+
+            TransactionWorksheetLine.Modify(true);
+        until TransactionWorksheetLine.Next() = 0;
+    end;
+
     local procedure InsertLinesFromSetup(TransactionSetupCode: Code[20])
     var
         TransactionSetup: Record "Transaction Setup_tf";
@@ -120,7 +147,7 @@ codeunit 150001 "Transaction Worksheet Mgt_tf"
     ) Exists: Boolean
     var
         TransactionWorksheetLine: Record "Transaction Worksheet Line_tf";
-        LineExistsFalse, LineExistsTrue : Boolean;
+        LineExistsConsumeFalse, LineExistsConsumeTrue : Boolean;
     begin
         TransactionWorksheetLine.SetRange("Transaction Setup Code", TransactionSEtupCode);
         TransactionWorksheetLine.SetRange("Table ID", TableID);
@@ -128,21 +155,21 @@ codeunit 150001 "Transaction Worksheet Mgt_tf"
         TransactionWorksheetLine.SetRange("Run TryFunction", RunTryFunction);
         TransactionWorksheetLine.SetRange("Consume TryFunction Result", false);
 
-        LineExistsFalse := not TransactionWorksheetLine.IsEmpty();
+        LineExistsConsumeFalse := not TransactionWorksheetLine.IsEmpty();
 
         TransactionWorksheetLine.SetRange("Consume TryFunction Result", true);
 
-        LineExistsTrue := not TransactionWorksheetLine.IsEmpty();
+        LineExistsConsumeTrue := not TransactionWorksheetLine.IsEmpty();
 
-        if LineExistsFalse and LineExistsTrue then begin
+        if LineExistsConsumeFalse and LineExistsConsumeTrue then begin
             Exists := true;
             exit;
         end;
 
-        if LineExistsFalse then
+        if LineExistsConsumeFalse then
             ConsumeTryFunctionResult := true
         else
-            if LineExistsTrue then
+            if LineExistsConsumeTrue then
                 ConsumeTryFunctionResult := false;
     end;
 

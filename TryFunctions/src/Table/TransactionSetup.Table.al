@@ -5,6 +5,7 @@ table 150002 "Transaction Setup_tf"
     DrillDownPageId = "Transaction Setup_tf";
     LookupPageId = "Transaction Setup_tf";
     Access = Internal;
+    Extensible = false;
 
     fields
     {
@@ -38,10 +39,8 @@ table 150002 "Transaction Setup_tf"
     var
         RecordPrimaryKeyValue: Record "Record Primary Key Value_tf";
         TransactionWorksheetLine: Record "Transaction Worksheet Line_tf";
-        ConfirmManagement: Codeunit "Confirm Management";
-        DeleteSetupQst: Label 'Do you want to delete the setup %1?', Comment = '%1 = Setup Code';
     begin
-        if not ConfirmManagement.GetResponseOrDefault(StrSubstNo(DeleteSetupQst, Code), false) then
+        if not GuiAllowed() then
             exit;
 
         RecordPrimaryKeyValue.SetFilter("Table ID", "ID Filter");

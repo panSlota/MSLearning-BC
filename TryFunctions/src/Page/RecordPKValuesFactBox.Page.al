@@ -7,6 +7,8 @@ page 150003 "Record PK Values FactBox_tf"
     InsertAllowed = false;
     ModifyAllowed = false;
     DeleteAllowed = false;
+    Extensible = false;
+    SourceTableView = sorting(Position) order(ascending);
 
     layout
     {

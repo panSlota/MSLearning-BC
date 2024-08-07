@@ -1,6 +1,5 @@
 pageextension 150000 "All Objects with Caption_tf" extends "All Objects with Caption"
 {
-
     procedure GetSelectionFilter_tf() Filter: Text
     var
         AllObjWithCaption: Record AllObjWithCaption;

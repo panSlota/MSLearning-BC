@@ -4,10 +4,9 @@ enum 150000 "Record Action Type_tf" implements ITransactionType_tf
     UnknownValueImplementation = ITransactionType_tf = "Empty Transaction_tf";
     Access = Internal;
 
-    value(0;
-    " ")
+    value(0; " ")
     {
-        Caption = ' ';
+        Caption = ' ', Locked = true;
     }
     value(1; Read)
     {

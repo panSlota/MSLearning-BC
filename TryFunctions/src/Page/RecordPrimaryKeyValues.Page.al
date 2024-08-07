@@ -6,6 +6,7 @@ page 150000 "Record Primary Key Values_tf"
     SourceTable = "Record Primary Key Value_tf";
     UsageCategory = None;
     DelayedInsert = true;
+    Extensible = false;
     SourceTableView = sorting(Position) order(ascending);
 
     layout

@@ -4,7 +4,7 @@ enum 150001 "Transaction Run Result_tf"
 
     value(0; " ")
     {
-        Caption = ' ';
+        Caption = ' ', Locked = true;
     }
     value(1; Success)
     {
