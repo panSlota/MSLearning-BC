@@ -1,3 +1,9 @@
+/// <summary>
+/// neprovede zadnou operaci
+/// 
+/// slouzi pouze jako vychozi implementace pro ITransactionType_tf &amp;
+/// implementace pro nezname hodnoty v E150000 "Record Action Type_tf"
+/// </summary>
 codeunit 150006 "Empty Transaction_tf" implements ITransactionType_tf
 {
     Access = Internal;

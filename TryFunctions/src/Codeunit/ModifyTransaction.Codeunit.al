@@ -1,3 +1,8 @@
+/// <summary>
+/// modifikace zaznamu
+/// 
+/// obsahuje funkce pro modifikaci zaznamu
+/// </summary>
 codeunit 150004 "Modify Transaction_tf" implements ITransactionType_tf
 {
     Access = Internal;
@@ -6,6 +11,16 @@ codeunit 150004 "Modify Transaction_tf" implements ITransactionType_tf
         TransactionFunctions: Codeunit "Transaction Functions_tf";
         ProcessNameLbl: Label 'modify';
 
+    /// <summary>
+    /// natahne si zaznam z DB a modifikuje ho
+    ///
+    /// na ziskanem zaznamu najde prvni pole, ktere neni soucasi PK &amp;&amp; jeho datovy typ je bud Code[10/20] nebo Text
+    ///
+    /// do tohoto pole prida retezec '_MOD' a zvaliduje ho
+    ///
+    /// na zaznamu provede Modify
+    /// </summary>
+    /// <param name="TransactionWorksheetLine">radek sesitu transakce</param>
     procedure Process(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf")
     var
         Field: Record Field;
