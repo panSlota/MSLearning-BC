@@ -509,9 +509,15 @@
         </trans-unit>
         <trans-unit id="Page 2179994353 - Action 436407473 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Navigation</source>
-          <target state="translated">Navigace</target>
+          <target state="translated">Související</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Worksheet_tf - Action Navigation_Promoted - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2179994353 - Action 3590497249 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Preparations</source>
+          <target state="translated">Přípravy</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Worksheet_tf - Action Preparations_Promoted - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2179994353 - Action 3312973166 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Transactions</source>

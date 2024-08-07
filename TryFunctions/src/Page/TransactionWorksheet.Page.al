@@ -240,9 +240,15 @@ page 150001 "Transaction Worksheet_tf"
                 actionref("Run Transaction_Promoted"; "Run Transaction") { }
                 actionref("Run All Transactions_Promoted"; "Run All Transactions") { }
             }
-            actionref("Suggest Lines_Promoted"; "Suggest Lines") { }
-            actionref("Clear Results_Promoted"; "Clear Results") { }
-            actionref("Delete All_Promoted"; "Delete All") { }
+
+            group(Preparations_Promoted)
+            {
+                Caption = 'Preparations';
+                actionref("Check Primary Key Values_Promoted"; "Check Primary Key Values") { }
+                actionref("Suggest Lines_Promoted"; "Suggest Lines") { }
+                actionref("Clear Results_Promoted"; "Clear Results") { }
+                actionref("Delete All_Promoted"; "Delete All") { }
+            }
 
             group(Navigation_Promoted)
             {
