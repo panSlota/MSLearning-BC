@@ -3,6 +3,7 @@ table 150001 "Transaction Worksheet Line_tf"
     Caption = 'Transaction Worksheet Line';
     DataClassification = CustomerContent;
     Access = Internal;
+    Extensible = false;
 
     fields
     {
@@ -37,6 +38,7 @@ table 150001 "Transaction Worksheet Line_tf"
         {
             Caption = 'Result';
             Editable = false;
+            InitValue = " ";
         }
         field(7; "Result Reason"; Text[250])
         {
@@ -66,6 +68,17 @@ table 150001 "Transaction Worksheet Line_tf"
         {
             Caption = 'Throw Error';
         }
+        field(12; "Defined PK Checked"; Boolean)
+        {
+            Caption = 'Defined PK Checked';
+            Editable = false;
+        }
+        field(13; "No. of PK Fields Missing"; Integer)
+        {
+            Caption = 'No. of PK Fields Missing';
+            MinValue = 0;
+            Editable = false;
+        }
     }
     keys
     {
@@ -74,16 +87,6 @@ table 150001 "Transaction Worksheet Line_tf"
             Clustered = true;
         }
     }
-
-    trigger OnInsert()
-    var
-        myInt: Integer;
-    begin
-        myInt := 3;
-    end;
-
-    var
-        TransactionWorksheetMgt: Codeunit "Transaction Worksheet Mgt_tf";
 
     procedure LookupTransactionSetupCode(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf"; var TransactionSetupCode: Code[20])
     var

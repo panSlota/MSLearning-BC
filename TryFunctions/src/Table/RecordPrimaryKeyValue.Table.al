@@ -5,6 +5,7 @@ table 150000 "Record Primary Key Value_tf"
     DrillDownPageId = "Record Primary Key Values_tf";
     LookupPageId = "Record Primary Key Values_tf";
     Access = Internal;
+    Extensible = false;
 
     fields
     {
@@ -82,6 +83,16 @@ table 150000 "Record Primary Key Value_tf"
         field(10; "Line No."; Integer)
         {
             Caption = 'Line No.';
+        }
+        field(11; "Field Length"; Integer)
+        {
+            Caption = 'Field Length';
+            FieldClass = FlowField;
+            CalcFormula = lookup(Field.Len where(TableNo = field("Table ID"),
+                                                 FieldName = field(Name),
+                                                 IsPartOfPrimaryKey = const(true),
+                                                 ObsoleteState = const(No)));
+            Editable = false;
         }
     }
     keys

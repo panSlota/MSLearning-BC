@@ -7,6 +7,7 @@ page 150001 "Transaction Worksheet_tf"
     UsageCategory = Administration;
     SaveValues = true;
     AutoSplitKey = true;
+    Extensible = false;
 
     layout
     {
@@ -94,6 +95,14 @@ page 150001 "Transaction Worksheet_tf"
                 {
                     ToolTip = 'Specifies the last date and time the transaction has been executed.';
                 }
+                field("Defined PK Checked"; Rec."Defined PK Checked")
+                {
+                    ToolTip = 'Specifies if the primary key values have been checked.';
+                }
+                field("No. of PK Fields Missing"; Rec."No. of PK Fields Missing")
+                {
+                    ToolTip = 'Specifies the number of primary key fields missing from the definition.';
+                }
             }
         }
         area(FactBoxes)
@@ -143,48 +152,67 @@ page 150001 "Transaction Worksheet_tf"
                     end;
                 }
             }
-            action("Suggest Lines")
+            group(Preparations)
             {
-                ApplicationArea = All;
-                Caption = 'Suggest Lines';
-                ToolTip = 'Suggests all operations for the current table.';
-                Image = SuggestLines;
+                Caption = 'Preparations';
+                action("Suggest Lines")
+                {
+                    ApplicationArea = All;
+                    Caption = 'Suggest Lines';
+                    ToolTip = 'Suggests all operations for the current table.';
+                    Image = SuggestLines;
 
-                trigger OnAction()
-                var
-                begin
-                    TransactionWorksheetMgt.SuggestLines(CurrentTransactionSetupCode);
-                end;
-            }
-            action("Clear Results")
-            {
-                ApplicationArea = All;
-                Caption = 'Clear Results';
-                ToolTip = 'Clears all results of the transaction runs from the worksheet.';
-                Image = ClearLog;
-
-                trigger OnAction()
-                begin
-                    TransactionWorksheetMgt.ClearResults(Rec);
-                end;
-            }
-            action("Delete All")
-            {
-                ApplicationArea = All;
-                Caption = 'Delete All';
-                ToolTip = 'Deletes all lines from the worksheet.';
-                Image = DeleteRow;
-
-                trigger OnAction()
-                var
-                    TransactionWorksheetLine: Record "Transaction Worksheet Line_tf";
-                begin
-                    TransactionWorksheetLine.SetRange("Transaction Setup Code", CurrentTransactionSetupCode);
-                    if not TransactionWorksheetLine.IsEmpty() then begin
-                        TransactionWorksheetLine.DeleteAll(true);
-                        CurrPage.Update(false);
+                    trigger OnAction()
+                    var
+                    begin
+                        TransactionWorksheetMgt.SuggestLines(CurrentTransactionSetupCode);
                     end;
-                end;
+                }
+                action("Clear Results")
+                {
+                    ApplicationArea = All;
+                    Caption = 'Clear Results';
+                    ToolTip = 'Clears all results of the transaction runs from the worksheet.';
+                    Image = ClearLog;
+
+                    trigger OnAction()
+                    begin
+                        TransactionWorksheetMgt.ClearResults(Rec);
+                    end;
+                }
+                action("Delete All")
+                {
+                    ApplicationArea = All;
+                    Caption = 'Delete All';
+                    ToolTip = 'Deletes all lines from the worksheet.';
+                    Image = DeleteRow;
+
+                    trigger OnAction()
+                    var
+                        TransactionWorksheetLine: Record "Transaction Worksheet Line_tf";
+                    begin
+                        TransactionWorksheetLine.SetRange("Transaction Setup Code", CurrentTransactionSetupCode);
+                        if not TransactionWorksheetLine.IsEmpty() then begin
+                            TransactionWorksheetLine.DeleteAll(true);
+                            CurrPage.Update(false);
+                        end;
+                    end;
+                }
+                action("Check Primary Key Values")
+                {
+                    ApplicationArea = All;
+                    Caption = 'Check Primary Key Values';
+                    ToolTip = 'Checks the primary key values for the selected table.';
+                    Image = CheckDuplicates;
+
+                    trigger OnAction()
+                    var
+                        TransactionWorksheetLine: Record "Transaction Worksheet Line_tf";
+                    begin
+                        TransactionWorksheetLine.Copy(Rec);
+                        TransactionWorksheetMgt.CheckDefinedPKValues(TransactionWorksheetLine);
+                    end;
+                }
             }
         }
         area(Navigation)
@@ -212,9 +240,15 @@ page 150001 "Transaction Worksheet_tf"
                 actionref("Run Transaction_Promoted"; "Run Transaction") { }
                 actionref("Run All Transactions_Promoted"; "Run All Transactions") { }
             }
-            actionref("Suggest Lines_Promoted"; "Suggest Lines") { }
-            actionref("Clear Results_Promoted"; "Clear Results") { }
-            actionref("Delete All_Promoted"; "Delete All") { }
+
+            group(Preparations_Promoted)
+            {
+                Caption = 'Preparations';
+                actionref("Check Primary Key Values_Promoted"; "Check Primary Key Values") { }
+                actionref("Suggest Lines_Promoted"; "Suggest Lines") { }
+                actionref("Clear Results_Promoted"; "Clear Results") { }
+                actionref("Delete All_Promoted"; "Delete All") { }
+            }
 
             group(Navigation_Promoted)
             {

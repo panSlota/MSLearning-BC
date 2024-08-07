@@ -6,6 +6,7 @@ page 150002 "Transaction Setup_tf"
     SourceTable = "Transaction Setup_tf";
     UsageCategory = Administration;
     DelayedInsert = true;
+    Extensible = false;
 
     layout
     {
@@ -49,6 +50,11 @@ page 150002 "Transaction Setup_tf"
                     ToolTip = 'Specifies if the operation should be run inside a TryFunction.';
                 }
             }
+        }
+        area(FactBoxes)
+        {
+            systempart(Control1000001; Notes) { }
+            systempart(Control1000002; Links) { }
         }
     }
 }

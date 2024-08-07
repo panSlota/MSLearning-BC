@@ -6,7 +6,7 @@ codeunit 150006 "Empty Transaction_tf" implements ITransactionType_tf
     begin
     end;
 
-    procedure ProcessError(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf")
+    procedure ProcessError(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf"; var ErrInfo: ErrorInfo)
     begin
     end;
 
@@ -16,7 +16,7 @@ codeunit 150006 "Empty Transaction_tf" implements ITransactionType_tf
     end;
 
     [TryFunction]
-    procedure TFProcessError(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf")
+    procedure TFProcessError(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf"; var ErrInfo: ErrorInfo)
     begin
     end;
 }
