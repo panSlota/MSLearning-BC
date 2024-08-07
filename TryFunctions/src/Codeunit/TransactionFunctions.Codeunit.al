@@ -1,11 +1,11 @@
-codeunit 150000 "Transaction Functions"
+codeunit 150000 "Transaction Functions_tf"
 {
-    TableNo = "Transaction Worksheet Line";
+    TableNo = "Transaction Worksheet Line_tf";
     Access = Internal;
 
     trigger OnRun()
     var
-        lreTransactionWorksheetLine: Record "Transaction Worksheet Line";
+        lreTransactionWorksheetLine: Record "Transaction Worksheet Line_tf";
     begin
         lreTransactionWorksheetLine.Copy(Rec);
         Code(lreTransactionWorksheetLine);
@@ -17,9 +17,9 @@ codeunit 150000 "Transaction Functions"
 
     #region Transactions
 
-    local procedure "Code"(var TransactionWorksheetLine: Record "Transaction Worksheet Line")
+    local procedure "Code"(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf")
     var
-        ITransactionType: Interface ITransactionType;
+        ITransactionType: Interface ITransactionType_tf;
         Result: Boolean;
     begin
         TransactionWorksheetLine.FindSet();
@@ -32,18 +32,17 @@ codeunit 150000 "Transaction Functions"
                         Result := ITransactionType.TFProcessError(TransactionWorksheetLine)
                     else
                         Result := ITransactionType.TFProcess(TransactionWorksheetLine);
-                end else begin
+                end else
                     if TransactionWorksheetLine."Throw Error" then
                         ITransactionType.TFProcessError(TransactionWorksheetLine)
                     else
                         ITransactionType.TFProcess(TransactionWorksheetLine);
-                end;
-            end else begin
+            end else
                 if TransactionWorksheetLine."Throw Error" then
                     ITransactionType.ProcessError(TransactionWorksheetLine)
                 else
                     ITransactionType.Process(TransactionWorksheetLine);
-            end;
+
         until TransactionWorksheetLine.Next() = 0;
     end;
 
@@ -53,7 +52,7 @@ codeunit 150000 "Transaction Functions"
 
     #region Modify
 
-    local procedure Modify(var TransactionWorksheetLine: Record "Transaction Worksheet Line")
+    local procedure Modify(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf")
     var
         Result: Boolean;
     begin
@@ -63,28 +62,26 @@ codeunit 150000 "Transaction Functions"
                     Result := TFModifyRecordError(TransactionWorksheetLine)
                 else
                     Result := TFModifyRecord(TransactionWorksheetLine);
-            end else begin
+            end else
                 if TransactionWorksheetLine."Throw Error" then
                     TFModifyRecordError(TransactionWorksheetLine)
                 else
                     TFModifyRecord(TransactionWorksheetLine);
-            end;
-        end else begin
+        end else
             if TransactionWorksheetLine."Throw Error" then
                 ModifyRecordError(TransactionWorksheetLine)
             else
                 ModifyRecord(TransactionWorksheetLine);
-        end;
     end;
 
-    local procedure ModifyRecord(var TransactionWorksheetLine: Record "Transaction Worksheet Line")
+    local procedure ModifyRecord(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf")
     var
         myInt: Integer;
     begin
         // TransactionWorksheetLine.
     end;
 
-    local procedure ModifyRecordError(var TransactionWorksheetLine: Record "Transaction Worksheet Line")
+    local procedure ModifyRecordError(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf")
     var
         myInt: Integer;
     begin
@@ -92,13 +89,13 @@ codeunit 150000 "Transaction Functions"
     end;
 
     [TryFunction()]
-    local procedure TFModifyRecord(var TransactionWorksheetLine: Record "Transaction Worksheet Line")
+    local procedure TFModifyRecord(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf")
     begin
         ModifyRecord(TransactionWorksheetLine);
     end;
 
     [TryFunction()]
-    local procedure TFModifyRecordError(var TransactionWorksheetLine: Record "Transaction Worksheet Line")
+    local procedure TFModifyRecordError(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf")
     begin
         ModifyRecordError(TransactionWorksheetLine);
     end;
@@ -108,7 +105,7 @@ codeunit 150000 "Transaction Functions"
 
     #region Read
 
-    local procedure Read(var TransactionWorksheetLine: Record "Transaction Worksheet Line")
+    local procedure Read(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf")
     var
         Result: Boolean;
     begin
@@ -116,45 +113,43 @@ codeunit 150000 "Transaction Functions"
             if TransactionWorksheetLine."Consume TryFunction Result" then begin
                 if TransactionWorksheetLine."Throw Error" then begin
                     Result := TFReadRecordError(TransactionWorksheetLine);
-                    TransactionWorksheetLine.Result := Enum::"Transaction Run Result"::"Fail Consumed";
-                    TransactionWorksheetLine."Result Reason" := GetLastErrorText();
+                    TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::"Fail Consumed";
+                    TransactionWorksheetLine."Result Reason" := CopyStr(GetLastErrorText(), 1, MaxStrLen(TransactionWorksheetLine."Result Reason"));
                 end
                 else begin
                     Result := TFReadRecord(TransactionWorksheetLine);
-                    TransactionWorksheetLine.Result := Enum::"Transaction Run Result"::"Success Consumed";
+                    TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::"Success Consumed";
                 end;
-            end else begin
+            end else
                 if TransactionWorksheetLine."Throw Error" then begin
                     TFReadRecordError(TransactionWorksheetLine);
-                    TransactionWorksheetLine.Result := Enum::"Transaction Run Result"::Fail;
-                    TransactionWorksheetLine."Result Reason" := GetLastErrorText();
+                    TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::Fail;
+                    TransactionWorksheetLine."Result Reason" := CopyStr(GetLastErrorText(), 1, MaxStrLen(TransactionWorksheetLine."Result Reason"));
                 end
                 else begin
                     TFReadRecord(TransactionWorksheetLine);
-                    TransactionWorksheetLine.Result := Enum::"Transaction Run Result"::Success;
+                    TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::Success;
                 end;
-            end;
-        end else begin
+        end else
             if TransactionWorksheetLine."Throw Error" then begin
                 ReadRecordError(TransactionWorksheetLine);
-                TransactionWorksheetLine.Result := Enum::"Transaction Run Result"::Fail;
-                TransactionWorksheetLine."Result Reason" := GetLastErrorText();
+                TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::Fail;
+                TransactionWorksheetLine."Result Reason" := CopyStr(GetLastErrorText(), 1, MaxStrLen(TransactionWorksheetLine."Result Reason"));
             end
             else begin
                 ReadRecord(TransactionWorksheetLine);
-                TransactionWorksheetLine.Result := Enum::"Transaction Run Result"::Success;
+                TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::Success;
             end;
-        end;
     end;
 
-    local procedure ReadRecord(var TransactionWorksheetLine: Record "Transaction Worksheet Line")
+    local procedure ReadRecord(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf")
     var
         ReadRecordRef: RecordRef;
     begin
         GetRecordRef(ReadRecordRef, TransactionWorksheetLine);
     end;
 
-    local procedure ReadRecordError(var TransactionWorksheetLine: Record "Transaction Worksheet Line")
+    local procedure ReadRecordError(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf")
     var
         myInt: Integer;
     begin
@@ -162,7 +157,7 @@ codeunit 150000 "Transaction Functions"
     end;
 
     [TryFunction()]
-    local procedure TFReadRecord(var TransactionWorksheetLine: Record "Transaction Worksheet Line")
+    local procedure TFReadRecord(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf")
     var
         myInt: Integer;
     begin
@@ -170,7 +165,7 @@ codeunit 150000 "Transaction Functions"
     end;
 
     [TryFunction()]
-    local procedure TFReadRecordError(var TransactionWorksheetLine: Record "Transaction Worksheet Line")
+    local procedure TFReadRecordError(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf")
     var
         myInt: Integer;
     begin
@@ -182,7 +177,7 @@ codeunit 150000 "Transaction Functions"
 
     #region Delete
 
-    local procedure Delete(var TransactionWorksheetLine: Record "Transaction Worksheet Line")
+    local procedure Delete(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf")
     var
         Result: Boolean;
     begin
@@ -192,36 +187,26 @@ codeunit 150000 "Transaction Functions"
                     Result := TFDeleteRecordError(TransactionWorksheetLine)
                 else
                     Result := TFDeleteRecord(TransactionWorksheetLine);
-            end else begin
+            end else
                 if TransactionWorksheetLine."Throw Error" then
                     TFDeleteRecordError(TransactionWorksheetLine)
                 else
                     TFDeleteRecord(TransactionWorksheetLine);
-            end;
-        end else begin
+        end else
             if TransactionWorksheetLine."Throw Error" then
                 DeleteRecordError(TransactionWorksheetLine)
             else
                 DeleteRecord(TransactionWorksheetLine);
-        end;
     end;
 
-    local procedure DeleteRecord(var TransactionWorksheetLine: Record "Transaction Worksheet Line")
+    local procedure DeleteRecord(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf")
     var
         myInt: Integer;
     begin
 
     end;
 
-    local procedure DeleteRecordError(var TransactionWorksheetLine: Record "Transaction Worksheet Line")
-    var
-        myInt: Integer;
-    begin
-
-    end;
-
-    [TryFunction()]
-    local procedure TFDeleteRecord(var TransactionWorksheetLine: Record "Transaction Worksheet Line")
+    local procedure DeleteRecordError(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf")
     var
         myInt: Integer;
     begin
@@ -229,7 +214,15 @@ codeunit 150000 "Transaction Functions"
     end;
 
     [TryFunction()]
-    local procedure TFDeleteRecordError(var TransactionWorksheetLine: Record "Transaction Worksheet Line")
+    local procedure TFDeleteRecord(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf")
+    var
+        myInt: Integer;
+    begin
+
+    end;
+
+    [TryFunction()]
+    local procedure TFDeleteRecordError(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf")
     var
         myInt: Integer;
     begin
@@ -257,14 +250,9 @@ codeunit 150000 "Transaction Functions"
         RecRef.Open(TableNo);
     end;
 
-    #endregion Setup
-
-
-    #region Fields
-
-    procedure GetRecordRef(var RecRef: RecordRef; var TransactionWorksheetLine: Record "Transaction Worksheet Line")
+    procedure GetRecordRef(var RecRef: RecordRef; var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf")
     var
-        RecordPrimaryKeyValue: Record "Record Primary Key Value";
+        RecordPrimaryKeyValue: Record "Record Primary Key Value_tf";
     begin
         RecordPrimaryKeyValue.SetRange("Table ID", TransactionWorksheetLine."Table ID");
         RecordPrimaryKeyValue.SetRange("Transaction Setup Code", TransactionWorksheetLine."Transaction Setup Code");
@@ -279,13 +267,20 @@ codeunit 150000 "Transaction Functions"
         end;
 
         if RecRef.FindFirst() then
-            TransactionWorksheetLine.Result := Enum::"Transaction Run Result"::Success
+            TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::Success
         else begin
-            TransactionWorksheetLine.Result := Enum::"Transaction Run Result"::Fail;
-            TransactionWorksheetLine."Result Reason" := GetLastErrorText();
+            TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::Fail;
+            TransactionWorksheetLine."Result Reason" := CopyStr(GetLastErrorText(), 1, MaxStrLen(TransactionWorksheetLine."Result Reason"));
         end;
         TransactionWorksheetLine.Modify(true);
     end;
 
-    #endregion Fields
+    procedure GetProcessError(ProcessName: Text): Text
+    var
+        ErrorTxt: Label 'An error occured during the %1 process.', Comment = '%1 = Process Name';
+    begin
+        exit(StrSubstNo(ErrorTxt, ProcessName));
+    end;
+
+    #endregion Setup
 }

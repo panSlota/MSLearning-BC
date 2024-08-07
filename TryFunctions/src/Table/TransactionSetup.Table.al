@@ -1,9 +1,9 @@
-table 150002 "Transaction Setup"
+table 150002 "Transaction Setup_tf"
 {
     Caption = 'Transaction Setup';
     DataClassification = CustomerContent;
-    DrillDownPageId = "Transaction Setup";
-    LookupPageId = "Transaction Setup";
+    DrillDownPageId = "Transaction Setup_tf";
+    LookupPageId = "Transaction Setup_tf";
     Access = Internal;
 
     fields
@@ -17,7 +17,7 @@ table 150002 "Transaction Setup"
         {
             Caption = 'ID Filter';
         }
-        field(3; "Default Action"; Enum "Record Action Type")
+        field(3; "Default Action"; Enum "Record Action Type_tf")
         {
             Caption = 'Default Action';
         }
@@ -36,8 +36,8 @@ table 150002 "Transaction Setup"
 
     trigger OnDelete()
     var
-        RecordPrimaryKeyValue: Record "Record Primary Key Value";
-        TransactionWorksheetLine: Record "Transaction Worksheet Line";
+        RecordPrimaryKeyValue: Record "Record Primary Key Value_tf";
+        TransactionWorksheetLine: Record "Transaction Worksheet Line_tf";
         ConfirmManagement: Codeunit "Confirm Management";
         DeleteSetupQst: Label 'Do you want to delete the setup %1?', Comment = '%1 = Setup Code';
     begin

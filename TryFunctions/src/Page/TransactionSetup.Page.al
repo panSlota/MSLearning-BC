@@ -1,9 +1,9 @@
-page 150002 "Transaction Setup"
+page 150002 "Transaction Setup_tf"
 {
     ApplicationArea = All;
     Caption = 'Transaction Setup';
     PageType = List;
-    SourceTable = "Transaction Setup";
+    SourceTable = "Transaction Setup_tf";
     UsageCategory = Administration;
     DelayedInsert = true;
 
@@ -23,9 +23,8 @@ page 150002 "Transaction Setup"
 
                     trigger OnLookup(var Text: Text): Boolean
                     var
-                        SelectionFilterManagement: Codeunit SelectionFilterManagement;
-                        AllObjectsWithCaption: Page "All Objects with Caption";
                         AllObjWithCaption: Record AllObjWithCaption;
+                        AllObjectsWithCaption: Page "All Objects with Caption";
                     begin
                         AllObjectsWithCaption.LookupMode(true);
                         AllObjWithCaption.FilterGroup(2);
@@ -33,7 +32,7 @@ page 150002 "Transaction Setup"
                         AllObjWithCaption.FilterGroup(0);
                         AllObjectsWithCaption.SetTableView(AllObjWithCaption);
                         if AllObjectsWithCaption.RunModal() = Action::LookupOK then begin
-                            Text := AllObjectsWithCaption.GetSelectionFilter();
+                            Text := AllObjectsWithCaption.GetSelectionFilter_tf();
                             Rec."ID Filter" := CopyStr(Text, 1, MaxStrLen(Rec."ID Filter"));
                             exit(true);
                         end
@@ -52,47 +51,4 @@ page 150002 "Transaction Setup"
             }
         }
     }
-    actions
-    {
-        area(Navigation)
-        {
-            action("Primary Key Values")
-            {
-                ApplicationArea = All;
-                Caption = 'Primary Key Values';
-                ToolTip = 'Displays the primary key values for the selected table.';
-                Image = TextFieldConfirm;
-                Visible = PrimaryKeyValuesVisible;
-
-                trigger OnAction()
-                var
-                    RecordPrimaryKeyValues: Page "Record Primary Key Values";
-                    RecordPrimaryKeyValue: Record "Record Primary Key Value";
-                begin
-                    RecordPrimaryKeyValue.FilterGroup(2);
-                    RecordPrimaryKeyValue.SetRange("Transaction Setup Code", Rec.Code);
-                    RecordPrimaryKeyValue.SetFilter("Table ID", Rec."ID Filter");
-                    RecordPrimaryKeyValue.FilterGroup(0);
-                    RecordPrimaryKeyValues.SetTableView(RecordPrimaryKeyValue);
-                    RecordPrimaryKeyValues.Run();
-                end;
-            }
-        }
-        area(Promoted)
-        {
-            actionref("Primary Key Values_Promoted"; "Primary Key Values") { }
-        }
-    }
-
-    trigger OnAfterGetCurrRecord()
-    var
-        AllObjWithCaption: Record AllObjWithCaption;
-    begin
-        AllObjWithCaption.SetFilter("Object ID", Rec."ID Filter");
-        AllObjWithCaption.SetRange("Object Type", AllObjWithCaption."Object Type"::Table);
-        PrimaryKeyValuesVisible := AllObjWithCaption.Count() = 1;
-    end;
-
-    var
-        PrimaryKeyValuesVisible: Boolean;
 }

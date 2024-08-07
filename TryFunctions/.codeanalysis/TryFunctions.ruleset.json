@@ -1,0 +1,27 @@
+{
+    "name": "TryFunctions project ruleset",
+    "description": "contains rules for TryFunctions project",
+    "generalAction": "Info",
+    "rules": [
+        {
+            "id": "AL0830",
+            "action": "Hidden",
+            "justification": "ignored - potrebuju to pro testovaci ucely"
+        },
+        {
+            "id": "AS0053",
+            "action": "Hidden",
+            "justification": "ignored - stale jedu na OnPrem"
+        },
+        {
+            "id": "AS0084",
+            "action": "Hidden",
+            "justification": "ignored - rozsah ID si vymyslim sam aby se mi tam netvorily kolize"
+        },
+        {
+            "id": "AS0092",
+            "action": "Hidden",
+            "justification": "ignored - na OnPremu neresim"
+        }
+    ]
+}

@@ -1,7 +1,7 @@
-pageextension 150000 "All Objects with Caption_ext" extends "All Objects with Caption"
+pageextension 150000 "All Objects with Caption_tf" extends "All Objects with Caption"
 {
 
-    procedure GetSelectionFilter() Filter: Text
+    procedure GetSelectionFilter_tf() Filter: Text
     var
         AllObjWithCaption: Record AllObjWithCaption;
         SelectionFilterManagement: Codeunit SelectionFilterManagement;

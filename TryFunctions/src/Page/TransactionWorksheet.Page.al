@@ -1,9 +1,9 @@
-page 150001 "Transaction Worksheet"
+page 150001 "Transaction Worksheet_tf"
 {
     ApplicationArea = All;
     Caption = 'Transaction Worksheet';
     PageType = Worksheet;
-    SourceTable = "Transaction Worksheet Line";
+    SourceTable = "Transaction Worksheet Line_tf";
     UsageCategory = Administration;
     SaveValues = true;
     AutoSplitKey = true;
@@ -33,7 +33,7 @@ page 150001 "Transaction Worksheet"
 
                     trigger OnValidate()
                     var
-                        TransactionSetup: Record "Transaction Setup";
+                        TransactionSetup: Record "Transaction Setup_tf";
                     begin
                         TransactionSetup.Get(CurrentTransactionSetupCode);
                         Rec.FilterGroup(2);
@@ -98,11 +98,12 @@ page 150001 "Transaction Worksheet"
         }
         area(FactBoxes)
         {
-            part("Record PK Values FB"; "Record PK Values FactBox")
+            part("Record PK Values FB"; "Record PK Values FactBox_tf")
             {
                 ApplicationArea = All;
                 SubPageLink = "Table ID" = field("Table ID"),
-                              "Transaction Setup Code" = field("Transaction Setup Code");
+                              "Transaction Setup Code" = field("Transaction Setup Code"),
+                              "Line No." = field("Line No.");
             }
         }
     }
@@ -123,7 +124,7 @@ page 150001 "Transaction Worksheet"
 
                     trigger OnAction()
                     var
-                        TransactionWorksheetLine: Record "Transaction Worksheet Line";
+                        TransactionWorksheetLine: Record "Transaction Worksheet Line_tf";
                     begin
                         CurrPage.SetSelectionFilter(TransactionWorksheetLine);
                         TransactionFunctions.Run(TransactionWorksheetLine);
@@ -167,6 +168,24 @@ page 150001 "Transaction Worksheet"
                     TransactionWorksheetMgt.ClearResults(Rec);
                 end;
             }
+            action("Delete All")
+            {
+                ApplicationArea = All;
+                Caption = 'Delete All';
+                ToolTip = 'Deletes all lines from the worksheet.';
+                Image = DeleteRow;
+
+                trigger OnAction()
+                var
+                    TransactionWorksheetLine: Record "Transaction Worksheet Line_tf";
+                begin
+                    TransactionWorksheetLine.SetRange("Transaction Setup Code", CurrentTransactionSetupCode);
+                    if not TransactionWorksheetLine.IsEmpty() then begin
+                        TransactionWorksheetLine.DeleteAll(true);
+                        CurrPage.Update(false);
+                    end;
+                end;
+            }
         }
         area(Navigation)
         {
@@ -176,10 +195,12 @@ page 150001 "Transaction Worksheet"
                 Caption = 'Primary Key Values';
                 ToolTip = 'Opens the primary key values for the selected table.';
                 Image = TextFieldConfirm;
+                Scope = Repeater;
 
-                RunObject = page "Record Primary Key Values";
+                RunObject = page "Record Primary Key Values_tf";
                 RunPageLink = "Table ID" = field("Table ID"),
-                              "Transaction Setup Code" = field("Transaction Setup Code");
+                              "Transaction Setup Code" = field("Transaction Setup Code"),
+                              "Line No." = field("Line No.");
             }
         }
         area(Promoted)
@@ -193,6 +214,7 @@ page 150001 "Transaction Worksheet"
             }
             actionref("Suggest Lines_Promoted"; "Suggest Lines") { }
             actionref("Clear Results_Promoted"; "Clear Results") { }
+            actionref("Delete All_Promoted"; "Delete All") { }
 
             group(Navigation_Promoted)
             {
@@ -205,7 +227,7 @@ page 150001 "Transaction Worksheet"
 
     trigger OnOpenPage()
     var
-        TransactionSetup: Record "Transaction Setup";
+        TransactionSetup: Record "Transaction Setup_tf";
     begin
         if CurrentTransactionSetupCode <> '' then
             if not TransactionSetup.Get(CurrentTransactionSetupCode) then begin
@@ -221,7 +243,7 @@ page 150001 "Transaction Worksheet"
 
     trigger OnAfterGetRecord()
     begin
-        ResultEmphasize := Rec.Result in [Enum::"Transaction Run Result"::Success, Enum::"Transaction Run Result"::"Success Consumed"];
+        ResultEmphasize := Rec.Result in [Enum::"Transaction Run Result_tf"::Success, Enum::"Transaction Run Result_tf"::"Success Consumed"];
     end;
 
     trigger OnNewRecord(BelowxRec: Boolean)
@@ -230,8 +252,8 @@ page 150001 "Transaction Worksheet"
     end;
 
     var
-        TransactionWorksheetMgt: Codeunit "Transaction Worksheet Mgt";
-        TransactionFunctions: Codeunit "Transaction Functions";
+        TransactionWorksheetMgt: Codeunit "Transaction Worksheet Mgt_tf";
+        TransactionFunctions: Codeunit "Transaction Functions_tf";
         CurrentTransactionSetupCode: Code[20];
         ResultEmphasize: Boolean;
 }

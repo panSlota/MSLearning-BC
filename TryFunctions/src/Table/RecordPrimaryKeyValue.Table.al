@@ -1,9 +1,9 @@
-table 150000 "Record Primary Key Value"
+table 150000 "Record Primary Key Value_tf"
 {
     Caption = 'Record Primary Key Value';
     DataClassification = CustomerContent;
-    DrillDownPageId = "Record Primary Key Values";
-    LookupPageId = "Record Primary Key Values";
+    DrillDownPageId = "Record Primary Key Values_tf";
+    LookupPageId = "Record Primary Key Values_tf";
     Access = Internal;
 
     fields
@@ -79,10 +79,14 @@ table 150000 "Record Primary Key Value"
             OptionMembers = TableFilter,RecordID,OemText,Date,Time,DateFormula,Decimal,Media,MediaSet,Text,Code,Binary,BLOB,Boolean,Integer,OemCode,Option,BigInteger,Duration,GUID,DateTime;
             Editable = false;
         }
+        field(10; "Line No."; Integer)
+        {
+            Caption = 'Line No.';
+        }
     }
     keys
     {
-        key(PK; Name, "Table ID", "Transaction Setup Code")
+        key(PK; Name, "Table ID", "Transaction Setup Code", "Line No.")
         {
             Clustered = true;
         }

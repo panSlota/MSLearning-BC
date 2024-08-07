@@ -1,4 +1,4 @@
-table 150001 "Transaction Worksheet Line"
+table 150001 "Transaction Worksheet Line_tf"
 {
     Caption = 'Transaction Worksheet Line';
     DataClassification = CustomerContent;
@@ -29,11 +29,11 @@ table 150001 "Transaction Worksheet Line"
             CalcFormula = lookup(AllObjWithCaption."Object Name" where("Object Type" = const(Table),
                                                                        "Object ID" = field("Table ID")));
         }
-        field(5; "Action Type"; Enum "Record Action Type")
+        field(5; "Action Type"; Enum "Record Action Type_tf")
         {
             Caption = 'Action';
         }
-        field(6; Result; Enum "Transaction Run Result")
+        field(6; Result; Enum "Transaction Run Result_tf")
         {
             Caption = 'Result';
             Editable = false;
@@ -83,14 +83,14 @@ table 150001 "Transaction Worksheet Line"
     end;
 
     var
-        TransactionWorksheetMgt: Codeunit "Transaction Worksheet Mgt";
+        TransactionWorksheetMgt: Codeunit "Transaction Worksheet Mgt_tf";
 
-    procedure LookupTransactionSetupCode(var TransactionWorksheetLine: Record "Transaction Worksheet Line"; var TransactionSetupCode: Code[20])
+    procedure LookupTransactionSetupCode(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf"; var TransactionSetupCode: Code[20])
     var
-        TransactionSetup: Record "Transaction Setup";
+        TransactionSetup: Record "Transaction Setup_tf";
         CurrentFilterGroup: Integer;
     begin
-        if Page.RunModal(page::"Transaction Setup", TransactionSetup) = Action::LookupOK then
+        if Page.RunModal(page::"Transaction Setup_tf", TransactionSetup) = Action::LookupOK then
             TransactionSetupCode := TransactionSetup.Code;
 
         CurrentFilterGroup := TransactionWorksheetLine.FilterGroup();
@@ -99,7 +99,7 @@ table 150001 "Transaction Worksheet Line"
         TransactionWorksheetLine.FilterGroup(CurrentFilterGroup);
     end;
 
-    procedure SetupNewLine(var LastTransactionWorksheetLine: Record "Transaction Worksheet Line")
+    procedure SetupNewLine(var LastTransactionWorksheetLine: Record "Transaction Worksheet Line_tf")
     var
     begin
         "Transaction Setup Code" := LastTransactionWorksheetLine."Transaction Setup Code";

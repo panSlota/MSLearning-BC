@@ -1,9 +1,12 @@
-page 150003 "Record PK Values FactBox"
+page 150003 "Record PK Values FactBox_tf"
 {
     ApplicationArea = All;
-    Caption = 'Record PK Values FactBox';
+    Caption = 'Record Primary Keys Values';
     PageType = ListPart;
-    SourceTable = "Record Primary Key Value";
+    SourceTable = "Record Primary Key Value_tf";
+    InsertAllowed = false;
+    ModifyAllowed = false;
+    DeleteAllowed = false;
 
     layout
     {
