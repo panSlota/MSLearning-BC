@@ -2,14 +2,15 @@
   "id": "420666be-4144-4c74-a831-f59bedbba661",
   "name": "TryFunctions",
   "publisher": "Don Alberto",
-  "version": "1.0.0.0",
-  "brief": "",
-  "description": "",
-  "privacyStatement": "",
-  "EULA": "",
-  "help": "",
-  "url": "",
-  "logo": "",
+  "version": "24.2.240807.1",
+  "brief": "TryFunctions app for D365 BC",
+  "description": "contains worksheet for tryfunction run simulation",
+  "privacyStatement": "https://www.google.com",
+  "EULA": "https://www.google.com",
+  "help": "https://www.google.com",
+  "url": "https://www.google.com",
+  "contextSensitiveHelpUrl": "https://www.google.com",
+  "logo": "TF_logo.png",
   "dependencies": [],
   "screenshots": [],
   "platform": "1.0.0.0",
@@ -30,5 +31,6 @@
     "NoImplicitWith",
     "TranslationFile",
     "NoPromotedActionProperties"
-  ]
+  ],
+  "target": "OnPrem"
 }

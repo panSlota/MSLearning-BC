@@ -1,9 +1,9 @@
-page 150000 "Record Primary Key Values"
+page 150000 "Record Primary Key Values_tf"
 {
     ApplicationArea = All;
     Caption = 'Record Primary Key Values';
     PageType = List;
-    SourceTable = "Record Primary Key Value";
+    SourceTable = "Record Primary Key Value_tf";
     UsageCategory = None;
     DelayedInsert = true;
     SourceTableView = sorting(Position) order(ascending);

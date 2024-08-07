@@ -1,19 +1,19 @@
-codeunit 150001 "Transaction Worksheet Mgt"
+codeunit 150001 "Transaction Worksheet Mgt_tf"
 {
     Access = Internal;
 
-    procedure ClearResults(var TransactionWorksheetLine: Record "Transaction Worksheet Line")
+    procedure ClearResults(var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf")
     begin
-        TransactionWorksheetLine.Result := Enum::"Transaction Run Result"::" ";
+        TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::" ";
         TransactionWorksheetLine."Result Reason" := '';
-        TransactionWorksheetLine.ModifyAll(Result, Enum::"Transaction Run Result"::" ");
+        TransactionWorksheetLine.ModifyAll(Result, Enum::"Transaction Run Result_tf"::" ");
         TransactionWorksheetLine.ModifyAll("Result Reason", '');
     end;
 
     procedure SuggestLines(TransactionSetupCode: Code[20])
     var
-        TransactionWorksheetLine, TransactionWorksheetLine2 : Record "Transaction Worksheet Line";
-        TempTransactionWorksheetLine: Record "Transaction Worksheet Line" temporary;
+        TransactionWorksheetLine, TransactionWorksheetLine2 : Record "Transaction Worksheet Line_tf";
+        TempTransactionWorksheetLine: Record "Transaction Worksheet Line_tf" temporary;
         LastLineNo: Integer;
     begin
         DeleteLines(TransactionSetupCode);
@@ -63,9 +63,9 @@ codeunit 150001 "Transaction Worksheet Mgt"
 
     local procedure InsertLinesFromSetup(TransactionSetupCode: Code[20])
     var
-        TransactionSetup: Record "Transaction Setup";
+        TransactionSetup: Record "Transaction Setup_tf";
         AllObjWithCaption: Record AllObjWithCaption;
-        TransactionWorksheetLine: Record "Transaction Worksheet Line";
+        TransactionWorksheetLine: Record "Transaction Worksheet Line_tf";
         ConsumeTryFunctionResult: Boolean;
         LastTransactionWorksheetLineNo: Integer;
     begin
@@ -103,7 +103,7 @@ codeunit 150001 "Transaction Worksheet Mgt"
 
     local procedure DeleteLines(TransactionSetupCode: Code[20])
     var
-        TransactionWorksheetLine: Record "Transaction Worksheet Line";
+        TransactionWorksheetLine: Record "Transaction Worksheet Line_tf";
     begin
         TransactionWorksheetLine.SetRange("Transaction Setup Code", TransactionSetupCode);
         if not TransactionWorksheetLine.IsEmpty() then
@@ -114,12 +114,12 @@ codeunit 150001 "Transaction Worksheet Mgt"
     (
         TransactionSetupCode: Code[20];
         TableID: Integer;
-        ActionType: Enum "Record Action Type";
+        ActionType: Enum "Record Action Type_tf";
         RunTryFunction: Boolean;
         var ConsumeTryFunctionResult: Boolean
     ) Exists: Boolean
     var
-        TransactionWorksheetLine: Record "Transaction Worksheet Line";
+        TransactionWorksheetLine: Record "Transaction Worksheet Line_tf";
         LineExistsFalse, LineExistsTrue : Boolean;
     begin
         TransactionWorksheetLine.SetRange("Transaction Setup Code", TransactionSEtupCode);
@@ -141,15 +141,16 @@ codeunit 150001 "Transaction Worksheet Mgt"
 
         if LineExistsFalse then
             ConsumeTryFunctionResult := true
-        else if LineExistsTrue then
-            ConsumeTryFunctionResult := false;
+        else
+            if LineExistsTrue then
+                ConsumeTryFunctionResult := false;
     end;
 
     local procedure ValidateLineFields
     (
-        var TransactionWorksheetLine: Record "Transaction Worksheet Line";
+        var TransactionWorksheetLine: Record "Transaction Worksheet Line_tf";
         TableID: Integer;
-        RecordActionType: Enum "Record Action Type";
+        RecordActionType: Enum "Record Action Type_tf";
         RunTryFunction: Boolean;
         ConsumeTryFunctionResult: Boolean
     )
@@ -165,7 +166,7 @@ codeunit 150001 "Transaction Worksheet Mgt"
 
     local procedure GetLastLineNo(TransactionSetupCode: Code[20]): Integer
     var
-        TransactionWorksheetLine: Record "Transaction Worksheet Line";
+        TransactionWorksheetLine: Record "Transaction Worksheet Line_tf";
     begin
         TransactionWorksheetLine.SetRange("Transaction Setup Code", TransactionSetupCode);
         if TransactionWorksheetLine.FindLast() then

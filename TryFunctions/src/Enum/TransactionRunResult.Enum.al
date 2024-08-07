@@ -1,4 +1,4 @@
-enum 150001 "Transaction Run Result"
+enum 150001 "Transaction Run Result_tf"
 {
     Access = Internal;
 
