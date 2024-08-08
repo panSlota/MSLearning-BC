@@ -21,6 +21,7 @@ table 150001 "Transaction Worksheet Line_tf"
         field(3; "Table ID"; Integer)
         {
             Caption = 'Table ID';
+            TableRelation = AllObjWithCaption."Object ID" where("Object Type" = const(Table));
         }
         field(4; "Table Name"; Text[30])
         {

@@ -37,45 +37,45 @@ codeunit 150000 "Transaction Functions_tf"
         ErrInfo: ErrorInfo;
     begin
         TransactionWorksheetLine.SetRange("No. of PK Fields Missing", 0);
-        TransactionWorksheetLine.FindSet();
-        repeat
-            ITransactionType := TransactionWorksheetLine."Action Type";
+        if TransactionWorksheetLine.FindSet() then
+            repeat
+                ITransactionType := TransactionWorksheetLine."Action Type";
 
-            if TransactionWorksheetLine."Run TryFunction" then begin
-                if TransactionWorksheetLine."Consume TryFunction Result" then begin
-                    if TransactionWorksheetLine."Throw Error" then begin
-                        if ITransactionType.TFProcessError(TransactionWorksheetLine, ErrInfo) then;
-                        TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::"Fail Consumed";
-                        TransactionWorksheetLine."Result Reason" := CopyStr(ErrInfo.Message(), 1, MaxStrLen(TransactionWorksheetLine."Result Reason"));
-                    end
-                    else begin
-                        if ITransactionType.TFProcess(TransactionWorksheetLine) then;
-                        TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::"Success Consumed";
-                    end;
+                if TransactionWorksheetLine."Run TryFunction" then begin
+                    if TransactionWorksheetLine."Consume TryFunction Result" then begin
+                        if TransactionWorksheetLine."Throw Error" then begin
+                            if ITransactionType.TFProcessError(TransactionWorksheetLine, ErrInfo) then;
+                            TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::"Fail Consumed";
+                            TransactionWorksheetLine."Result Reason" := CopyStr(ErrInfo.Message(), 1, MaxStrLen(TransactionWorksheetLine."Result Reason"));
+                        end
+                        else begin
+                            if ITransactionType.TFProcess(TransactionWorksheetLine) then;
+                            TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::"Success Consumed";
+                        end;
+                    end else
+                        if TransactionWorksheetLine."Throw Error" then begin
+                            if ITransactionType.TFProcessError(TransactionWorksheetLine, ErrInfo) then;
+                            TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::"Fail";
+                            TransactionWorksheetLine."Result Reason" := CopyStr(ErrInfo.Message(), 1, MaxStrLen(TransactionWorksheetLine."Result Reason"));
+                        end
+                        else begin
+                            if ITransactionType.TFProcess(TransactionWorksheetLine) then;
+                            TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::"Success";
+                        end;
                 end else
                     if TransactionWorksheetLine."Throw Error" then begin
-                        if ITransactionType.TFProcessError(TransactionWorksheetLine, ErrInfo) then;
-                        TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::"Fail";
+                        ITransactionType.ProcessError(TransactionWorksheetLine, ErrInfo);
+                        TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::Fail;
                         TransactionWorksheetLine."Result Reason" := CopyStr(ErrInfo.Message(), 1, MaxStrLen(TransactionWorksheetLine."Result Reason"));
                     end
                     else begin
-                        if ITransactionType.TFProcess(TransactionWorksheetLine) then;
-                        TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::"Success";
+                        ITransactionType.Process(TransactionWorksheetLine);
+                        TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::Success;
                     end;
-            end else
-                if TransactionWorksheetLine."Throw Error" then begin
-                    ITransactionType.ProcessError(TransactionWorksheetLine, ErrInfo);
-                    TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::Fail;
-                    TransactionWorksheetLine."Result Reason" := CopyStr(ErrInfo.Message(), 1, MaxStrLen(TransactionWorksheetLine."Result Reason"));
-                end
-                else begin
-                    ITransactionType.Process(TransactionWorksheetLine);
-                    TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::Success;
-                end;
 
-            TransactionWorksheetLine."Last Run Time" := CurrentDateTime();
-            TransactionWorksheetLine.Modify(true);
-        until TransactionWorksheetLine.Next() = 0;
+                TransactionWorksheetLine."Last Run Time" := CurrentDateTime();
+                TransactionWorksheetLine.Modify(true);
+            until TransactionWorksheetLine.Next() = 0;
     end;
 
     #endregion Transactions
