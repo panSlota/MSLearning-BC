@@ -1,0 +1,36 @@
+{
+  "id": "f6156473-68e2-4b2a-90e1-ecda32d33f8a",
+  "name": "JobQueue",
+  "publisher": "Don Alberto",
+  "version": "24.2.240808.1",
+  "brief": "Job Queue app for D365 BC",
+  "description": "contains materials associated with job queue MS Learnings",
+  "privacyStatement": "https://www.google.com",
+  "EULA": "https://www.google.com",
+  "help": "https://www.google.com",
+  "url": "https://www.google.com",
+  "contextSensitiveHelpUrl": "https://www.google.com",
+  "logo": "JQ_logo.png",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "24.0.0.0",
+  "idRanges": [
+    {
+      "from": 150020,
+      "to": 150030
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "13.0",
+  "features": [
+    "NoImplicitWith",
+    "TranslationFile",
+    "NoPromotedActionProperties"
+  ],
+  "target": "OnPrem"
+}

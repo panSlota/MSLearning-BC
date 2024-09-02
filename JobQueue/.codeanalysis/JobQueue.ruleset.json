@@ -1,0 +1,22 @@
+{
+    "name": "JobQueue project ruleset",
+    "description": "contains rules for JobQueue project",
+    "generalAction": "Info",
+    "rules": [
+        {
+            "id": "AS0053",
+            "action": "None",
+            "justification": "ignored - stale jedu na OnPrem"
+        },
+        {
+            "id": "AS0084",
+            "action": "None",
+            "justification": "ignored - rozsah ID si vymyslim sam aby se mi tam netvorily kolize"
+        },
+        {
+            "id": "AS0092",
+            "action": "None",
+            "justification": "ignored - na OnPremu neresim"
+        }
+    ]
+}
