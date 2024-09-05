@@ -37,51 +37,107 @@ codeunit 150000 "Transaction Functions_tf"
         ErrInfo: ErrorInfo;
     begin
         TransactionWorksheetLine.SetRange("No. of PK Fields Missing", 0);
-        TransactionWorksheetLine.FindSet();
-        repeat
-            ITransactionType := TransactionWorksheetLine."Action Type";
+        if TransactionWorksheetLine.FindSet() then
+            repeat
+                ITransactionType := TransactionWorksheetLine."Action Type";
 
-            if TransactionWorksheetLine."Run TryFunction" then begin
-                if TransactionWorksheetLine."Consume TryFunction Result" then begin
-                    if TransactionWorksheetLine."Throw Error" then begin
-                        if ITransactionType.TFProcessError(TransactionWorksheetLine, ErrInfo) then;
-                        TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::"Fail Consumed";
-                        TransactionWorksheetLine."Result Reason" := CopyStr(ErrInfo.Message(), 1, MaxStrLen(TransactionWorksheetLine."Result Reason"));
-                    end
-                    else begin
-                        if ITransactionType.TFProcess(TransactionWorksheetLine) then;
-                        TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::"Success Consumed";
-                    end;
+                if TransactionWorksheetLine."Run TryFunction" then begin
+                    if TransactionWorksheetLine."Consume TryFunction Result" then begin
+                        if TransactionWorksheetLine."Throw Error" then begin
+                            if ITransactionType.TFProcessError(TransactionWorksheetLine, ErrInfo) then;
+                            TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::"Fail Consumed";
+                            TransactionWorksheetLine."Result Reason" := CopyStr(ErrInfo.Message(), 1, MaxStrLen(TransactionWorksheetLine."Result Reason"));
+                        end
+                        else begin
+                            if ITransactionType.TFProcess(TransactionWorksheetLine) then;
+                            TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::"Success Consumed";
+                        end;
+                    end else
+                        if TransactionWorksheetLine."Throw Error" then begin
+                            if ITransactionType.TFProcessError(TransactionWorksheetLine, ErrInfo) then;
+                            TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::"Fail";
+                            TransactionWorksheetLine."Result Reason" := CopyStr(ErrInfo.Message(), 1, MaxStrLen(TransactionWorksheetLine."Result Reason"));
+                        end
+                        else begin
+                            if ITransactionType.TFProcess(TransactionWorksheetLine) then;
+                            TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::"Success";
+                        end;
                 end else
                     if TransactionWorksheetLine."Throw Error" then begin
-                        if ITransactionType.TFProcessError(TransactionWorksheetLine, ErrInfo) then;
-                        TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::"Fail";
+                        ITransactionType.ProcessError(TransactionWorksheetLine, ErrInfo);
+                        TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::Fail;
                         TransactionWorksheetLine."Result Reason" := CopyStr(ErrInfo.Message(), 1, MaxStrLen(TransactionWorksheetLine."Result Reason"));
                     end
                     else begin
-                        if ITransactionType.TFProcess(TransactionWorksheetLine) then;
-                        TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::"Success";
+                        ITransactionType.Process(TransactionWorksheetLine);
+                        TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::Success;
                     end;
-            end else
-                if TransactionWorksheetLine."Throw Error" then begin
-                    ITransactionType.ProcessError(TransactionWorksheetLine, ErrInfo);
-                    TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::Fail;
-                    TransactionWorksheetLine."Result Reason" := CopyStr(ErrInfo.Message(), 1, MaxStrLen(TransactionWorksheetLine."Result Reason"));
-                end
-                else begin
-                    ITransactionType.Process(TransactionWorksheetLine);
-                    TransactionWorksheetLine.Result := Enum::"Transaction Run Result_tf"::Success;
-                end;
 
-            TransactionWorksheetLine."Last Run Time" := CurrentDateTime();
-            TransactionWorksheetLine.Modify(true);
-        until TransactionWorksheetLine.Next() = 0;
+                TransactionWorksheetLine."Last Run Time" := CurrentDateTime();
+                TransactionWorksheetLine.Modify(true);
+            until TransactionWorksheetLine.Next() = 0;
     end;
 
     #endregion Transactions
 
 
     #region Setup
+
+    [Scope('OnPrem')]
+    procedure GetDisableWriteInsideTryFunctions(var Config: Text; var Disabled: Boolean)
+    var
+        ActiveSession: Record "Active Session";
+        TypeHelper: Codeunit "Type Helper";
+
+        Process: Dotnet Process_tf;
+        ProcessStartInfo: Dotnet ProcessStartInfo_tf;
+
+        GetNavServerConfigurationLbl: Label 'Get-NavServerConfiguration -ServerInstance %1', Comment = '%1 = Instance Name', Locked = true;
+        ImportModuleLbl: Label 'Import-Module -Name ''C:\Program Files\Microsoft Dynamics NAV\240\Service\NavAdminTool.ps1'' -Verbose > $null', Locked = true;
+        FileNameLbl: Label 'PowerShell.exe', Locked = true;
+        ArgumentsLbl: Label '-NoProfile -ExecutionPolicy Bypass -Command "%1; %2"', Comment = '%1 = Import-Module, %2 = Get-NavServerConfiguration', Locked = true;
+        DisableWriteInsideTryFunctionsLbl: Label 'DisableWriteInsideTryFunctions', Locked = true;
+        ConfigOutputLbl: Label '{"%1" : %2}', Comment = '%1 = DisableWriteInsideTryFunctions, %2 = Value', Locked = true;
+
+        Output, ErrorMessage, Line : Text;
+        StartPos, LineStart, EndPos : Integer;
+    begin
+        ProcessStartInfo := ProcessStartInfo.ProcessStartInfo();
+        ProcessStartInfo.FileName(FileNameLbl);
+
+        ActiveSession.SetRange("Server Instance ID", ServiceInstanceId());
+        ActiveSession.SetRange("Session ID", SessionId());
+        ActiveSession.FindFirst();
+
+        ProcessStartInfo.Arguments(StrSubstNo(ArgumentsLbl,
+                                              ImportModuleLbl,
+                                              StrSubstNo(GetNavServerConfigurationLbl,
+                                                         ActiveSession."Server Instance Name")));
+
+        ProcessStartInfo.RedirectStandardOutput(true);
+        ProcessStartInfo.RedirectStandardError(true);
+        ProcessStartInfo.UseShellExecute(false);
+        ProcessStartInfo.CreateNoWindow(true);
+
+        Process := Process.Start(ProcessStartInfo);
+        Output := Process.StandardOutput().ReadToEnd();
+        ErrorMessage := Process.StandardError().ReadToEnd();
+        Process.WaitForExit();
+
+        StartPos := StrPos(Output, DisableWriteInsideTryFunctionsLbl);
+        LineStart := Output.LastIndexOf(TypeHelper.CRLFSeparator(), StartPos) + 1;
+        if LineStart = 0 then
+            LineStart := 1;
+
+        EndPos := Output.IndexOf(TypeHelper.CRLFSeparator(), StartPos);
+        if EndPos = 0 then
+            EndPos := StrLen(Output) + 1;
+
+        Line := Output.Substring(LineStart, EndPos - LineStart);
+
+        Disabled := Line.ToLower().Contains('true');
+        Config := StrSubstNo(ConfigOutputLbl, DisableWriteInsideTryFunctionsLbl, Format(Disabled, 0, 9));
+    end;
 
     /// <summary>
     /// provede RecordRef.Open na zaklade ID tabulky

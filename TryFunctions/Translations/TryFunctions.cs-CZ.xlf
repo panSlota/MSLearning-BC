@@ -525,6 +525,60 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Transaction Worksheet_tf - Action Transactions_Promoted - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1439666858 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TryFunction Test</source>
+          <target state="translated">Testování TryFunction</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page TryFunction Test_tf - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1439666858 - Method 52072362 - NamedType 3182483960" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ThrowError = %1, ConsumeResult = %2</source>
+          <target state="translated">Vypálit chybu = %1, Použít návratovou hodnotu: %2</target>
+          <note from="Developer" annotates="general" priority="2">%1 = hodi chybu nebo ne, %2 = zpracovat výsledek nebo ne</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page TryFunction Test_tf - Method Func - NamedType InfoLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 1439666858 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <target state="translated">Obecné</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page TryFunction Test_tf - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1439666858 - Action 2836454192 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Get-NavServerConfiguration::DisableWriteInsideTryFunctions</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page TryFunction Test_tf - Action Get-NavServerConfiguration::DisableWriteInsideTryFunctions - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1439666858 - Action 2836454192 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Get-NavServerConfiguration::DisableWriteInsideTryFunctions</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page TryFunction Test_tf - Action Get-NavServerConfiguration::DisableWriteInsideTryFunctions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1439666858 - Action 3781836200 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Executes a TryFunction, attempts to modfiy a record and then raises na exception.</source>
+          <target state="translated">Vykoná funkci s atributem [TryFunction()], pokusí se modifikovat záznam a potom vyhodí chybu.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page TryFunction Test_tf - Action TF_DBWRITE_ERR - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1439666858 - Action 3781836200 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TryFunction DBWrite Error</source>
+          <target state="translated">Zápis do DB uvnitř TryFunction s chybou</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page TryFunction Test_tf - Action TF_DBWRITE_ERR - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1439666858 - Action 4018307779 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Executes a TryFunction without error.</source>
+          <target state="translated">Vykoná kód uvnitř TryFunction bez chyby.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page TryFunction Test_tf - Action TF_Without Error - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1439666858 - Action 4018307779 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TryFunction Without Error</source>
+          <target state="translated">TryFunction bez chyby</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page TryFunction Test_tf - Action TF_Without Error - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Enum 2203464042 - EnumValue 2477294019 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Delete</source>
           <target state="translated">Odstranit</target>

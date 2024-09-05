@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="cs-CZ" original="JobQueue">
+    <body>
+      <group id="body">
+        <trans-unit id="Table 2992068696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Q App Setup</source>
+          <target state="translated">Nastavení aplikace fronty úloh</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Job Q App Setup_jq - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2992068696 - Field 2891538263 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enabled</source>
+          <target state="translated">Povoleno</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Job Q App Setup_jq - Field Enabled - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2992068696 - Field 1127351088 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Expected Parameter Count</source>
+          <target state="translated">Očekávaný počet parametrů</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Job Q App Setup_jq - Field Expected Parameter Count - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2992068696 - Field 4284725503 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Hash Algorithm Type</source>
+          <target state="translated">Typ hašovacího algoritmu</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Job Q App Setup_jq - Field Hash Algorithm Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2992068696 - Field 3570811523 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Param. String Separator</source>
+          <target state="translated">Oddělovač řetězce parametrů</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Job Q App Setup_jq - Field Param. String Separator - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2992068696 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary Key</source>
+          <target state="translated">Primární klíč</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Job Q App Setup_jq - Field Primary Key - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2992068696 - Field 2755984602 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use Checksum</source>
+          <target state="translated">Použít kontrolní součet</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Job Q App Setup_jq - Field Use Checksum - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2992068696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Q App Setup</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Job Q App Setup_jq - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2992068696 - Property 3863440606" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Queue App Setup</source>
+          <target state="translated">Nastavení aplikace fronty úloh</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Job Q App Setup_jq - Property AdditionalSearchTerms</note>
+        </trans-unit>
+        <trans-unit id="Page 2992068696 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Job Q App Setup_jq - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2992068696 - Control 2891538263 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether the setup is enabled or not.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Job Q App Setup_jq - Control Enabled - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2992068696 - Control 1127351088 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the count of parameters that are expected to be present in the parameter string.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Job Q App Setup_jq - Control Expected Parameter Count - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2992068696 - Control 3570811523 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the char that is used to separate values in the parameter string found in the job queue entry.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Job Q App Setup_jq - Control Param. String Separator - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2992068696 - Control 2755984602 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether the checksum is used or not. If enabled, the parameter string is expected to contain an extra value (also separated) that represents the hash of the previous parameters.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Job Q App Setup_jq - Control Use Checksum - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1478777676 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Plan Job</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Plan Job_jq - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1478777676 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Plan Job_jq - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1478777676 - Control 1151054542 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the maximum number of attempts to run the job.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Plan Job_jq - Control Maximum No. of Attempts to Run - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1478777676 - Control 3388924254 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the number of attempts to run the job.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Plan Job_jq - Control No. of Attempts to Run - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1478777676 - Control 3371015643 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the caption of the object that is to be run.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Plan Job_jq - Control Object Caption to Run - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1478777676 - Control 1577117606 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the ID of the object that is to be run.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Plan Job_jq - Control Object ID to Run - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1478777676 - Control 994380745 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the type of object that is to be run.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Plan Job_jq - Control Object Type to Run - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1478777676 - Control 1926262953 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the priority of the job within the category.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Plan Job_jq - Control Priority Within Category - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1478777676 - Control 2181449883 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the delay in seconds before the job is rerun.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Plan Job_jq - Control Rerun Delay (sec.) - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1478777676 - Control 3431804371 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the scheduled date and time of the job.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Plan Job_jq - Control Scheduled - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1793933309 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Scheduled Report</source>
+          <target state="translated">Plánovaná sestava</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Scheduled Report_jq - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 872953038 - Action 2353202073 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2276662850">
+          <source>Computes hash of the parameter string and adds it as the last parameter.</source>
+          <target state="translated">Vypočítá SHA256 haš řetězce parametrů a přidá jej jako poslední parametr. Pokud je již haš součástí řetězce parametrů, neudělá nic.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Job Queue Entry Card_jq - Action Compute Param. String Hash_jq - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 872953038 - Action 2353202073 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2276662850">
+          <source>Compute Param. String Hash</source>
+          <target state="translated">Vypočítat haš řetězce parametrů</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Job Queue Entry Card_jq - Action Compute Param. String Hash_jq - Property Caption</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>
