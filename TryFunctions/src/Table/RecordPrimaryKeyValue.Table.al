@@ -26,7 +26,6 @@ table 150000 "Record Primary Key Value_tf"
                     Name := Field.FieldName;
                     CalcFields("Type Name", Type, "Field No.");
                 end;
-
             end;
         }
         field(2; "Type Name"; Text[30])
