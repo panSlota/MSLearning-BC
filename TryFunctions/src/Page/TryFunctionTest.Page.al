@@ -97,6 +97,7 @@ page 150004 "TryFunction Test_tf"
                 begin
                     Message('Dummy');
                     Message('DUMMY2');
+                    Message('DUMMY3');
                 end;
             }
         }
