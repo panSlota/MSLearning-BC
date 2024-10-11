@@ -74,6 +74,18 @@ page 150004 "TryFunction Test_tf"
                     Message('Config: %1\Disabled: %2', Config, Disabled);
                 end;
             }
+            action("MSG")
+            {
+                ApplicationArea = All;
+                Caption = 'Message';
+                ToolTip = 'Message';
+                Image = Text;
+
+                trigger OnAction()
+                begin
+                    Message('Hello World');
+                end;
+            }
         }
         area(Promoted)
         {
