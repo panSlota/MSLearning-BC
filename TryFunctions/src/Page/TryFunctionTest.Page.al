@@ -75,6 +75,12 @@ page 150004 "TryFunction Test_tf"
                 end;
             }
         }
+        area(Promoted)
+        {
+            actionref("TF_Without Error_Promoted"; "TF_Without Error") { }
+            actionref("TF_DBWRITE_ERR_Promoted"; "TF_DBWRITE_ERR") { }
+            actionref("Get-NavServerConfiguration::DisableWriteInsideTryFunctions_Promoted"; "Get-NavServerConfiguration::DisableWriteInsideTryFunctions") { }
+        }
     }
 
     [TryFunction()]
