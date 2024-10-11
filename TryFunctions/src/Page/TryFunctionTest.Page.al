@@ -96,6 +96,7 @@ page 150004 "TryFunction Test_tf"
                 trigger OnAction()
                 begin
                     Message('Dummy');
+                    Message('DUMMY2');
                 end;
             }
         }
