@@ -86,6 +86,18 @@ page 150004 "TryFunction Test_tf"
                     Message('Hello World');
                 end;
             }
+            action(dummy)
+            {
+                ApplicationArea = All;
+                Caption = 'Dummy';
+                ToolTip = 'Dummy';
+                Image = Text;
+
+                trigger OnAction()
+                begin
+                    Message('Dummy');
+                end;
+            }
         }
         area(Promoted)
         {
